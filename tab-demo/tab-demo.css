@@ -1,0 +1,23 @@
+.tab-button {
+    background-color: #f0f0f0;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    padding: 6px 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.tab-button:hover {
+    background-color: #e0e0e0;
+}
+
+.tab-button.active {
+    background-color: #e0e0e0;
+}
+
+.tab-component {
+    padding: 20px;
+    border: 1px solid #ccc;
+}

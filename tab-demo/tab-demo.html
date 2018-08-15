@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tab Demo</title>
+    <link rel="stylesheet" type="text/css" href="./tab-demo.css">
+</head>
+<body>
+<div id="tab-demo" class="demo">
+    <button
+    v-for="tab in tabs"
+    v-key="tab"
+    v-bind:class="['tab-button', {active: tab === currentTab}]"
+    v-on:click="currentTab = tab"
+    >
+        {{ tab }}
+    </button>
+    <component v-bind:is="currentTabComponent"
+    class='tab-component'
+    ></component>
+</div>
+
+<script type="text/javascript" src="https://unpkg.com/vue"></script>
+<script type="text/javascript" src="./tab-demo.js"></script>
+</body>
+</html>
