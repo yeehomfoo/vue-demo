@@ -1,2 +1,2 @@
 # vue-demo
-Demo code of vuejs.
+Demo code for vuejs.
