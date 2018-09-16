@@ -34,6 +34,6 @@ jobs:
           key: v1-dependencies-{{ checksum "vuetest/package.json" }}
         
       # run tests!
-      - run: npm test
+      - run: cd vuetest && npm run unit
 
 
