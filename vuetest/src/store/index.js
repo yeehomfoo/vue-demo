@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const moduleTest = {
+export const moduleTest = {
   state: {
     count: 1
   },
