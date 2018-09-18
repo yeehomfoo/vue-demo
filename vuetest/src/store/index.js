@@ -8,24 +8,24 @@ export const moduleTest = {
     count: 1
   },
   getters: {
-    done(state) {
+    done (state) {
       return state.count + 5
     }
   },
   mutations: {
-    increment(state) {
+    increment (state) {
       // 变更状态
       state.count++
     },
-    add(state, n) {
+    add (state, n) {
       state.count += n
     }
   },
   actions: {
-    increment(context) {
+    increment (context) {
       context.commit('increment')
     },
-    incrementAsync(context) {
+    incrementAsync (context) {
       // 延时1秒
       setTimeout(() => {
         context.commit('increment')
