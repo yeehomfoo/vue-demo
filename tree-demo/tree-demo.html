@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tree Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="./tree-demo.css" />
+</head>
+<body>
+  <p>(You can double click on an item to trun it into a folder.)</p>
+
+  <!-- the demo root element -->
+  <ul id="demo">
+    <tree-item
+      class="item"
+      :item="treeData"
+      @make-folder="makeFolder"
+      @add-item="addItem"></tree-item>
+  </ul>
+
+  <!-- item template -->
+  <script type="text/x-template" id="item-template">
+    <li>
+      <div
+        :class="{bold:isFolder}"
+        @click="toggle"
+        @dblclick="makeFolder">
+        {{ item.name }}
+        <span v-if="isFolder">[{{ isOpen ? '-' : '+' }}]</span>
+      </div>
+      <ul v-show="isOpen" v-if="isFolder">
+        <tree-item
+          class="item"
+          v-for="(child, index) in item.children"
+          :key="index"
+          :item="child"
+          @make-folder="$emit('make-folder', $event)"
+          @add-item="$emit('add-item', $event)">
+        </tree-item>
+        <li class="add" @click="$emit('add-item', item)">+</li>
+      </ul>
+    </li>
+  </script>
+  <script type="text/javascript" src="https://unpkg.com/vue"></script>
+  <script src="./treee-demo.js"></script>
+</body>
+</html>
